@@ -5,6 +5,8 @@ import axios from 'axios';
 
 import logo from '../img/logo.png';
 
+//Separar la seccion nav en su propio componente
+//Arreglar boton 3 lineas 
 
 const ContactoPage = (props) => {
 
@@ -127,7 +129,7 @@ const ContactoPage = (props) => {
                     <div className="col-md-12">
                         <label for="inputEmail4"
                             className="form-label">Email</label>
-                        <input type="email" placeholder="tunombre@mail.com"
+                        <input name='email' value={formData.email} onChange={handleChange} type="email" placeholder="tunombre@mail.com"
                             className="form-control" id="inputEmail4" />
                     </div>
                     <div className="col-12">
@@ -137,47 +139,35 @@ const ContactoPage = (props) => {
                         <input name="nombre" value={formData.nombre} onChange={handleChange} type="text" className="form-control"
                             id="inputNombre" placeholder="Santiago Perez" />
                     </div>
-                    <div className="col-md-6">
-                        <label for="inputCiudad"
-                            className="form-label">Ciudad</label>
-                        <input type="text" placeholder="Quilmes"
-                            className="form-control" id="inputCiudad" />
+                    <div className="col-md-12">
+                        <label for="inputTelefono"
+                            className="form-label">Telefono</label>
+                        <input type="text" name="telefono" value={formData.telefono} onChange={handleChange} placeholder="1122334545"
+                            className="form-control" id="inputTelefono" />
                     </div>
-                    <div className="col-md-6">
-                        <label for="inputProvincia"
-                            className="form-label">Provincia</label>
-                        <select id="inputProvincia" className="form-select">
-                            <option selected>CABA</option>
-                            <option>Córdoba</option>
-                            <option>Santa Fe</option>
-                            <option>Mendoza</option>
-                            <option>Provincia de Buenos Aires</option>
-                        </select>
+                    <div className="col-md-12">
+                        <label for="inputMensaje"
+                            className="form-label">En que podemos ayudarte?</label>
+                            <textarea name='mensaje' className="form-control" value={formData.mensaje} onChange={handleChange}></textarea>
                     </div>
+
                     <div className="col-md-2">
                         <label for="inputZip" className="form-label"></label>
-
-                    </div><div className="form-group">
-                        <label for="exampleFormControlTextarea1">¿En qué podemos
-                            ayudarte?</label>
-                        <textarea className="form-control"
-                            id="exampleFormControlTextarea1"
-                            rows="3"></textarea>
                     </div>
 
                     <div class="col-12">
                         <button type="submit"
-                            className="btn btn-primary">Enviar</button>
+                            className="btn btn-primary mb-3">Enviar</button>
                     </div>
                 </form>
+
+                {sending ? <p className="my-2 alert alert-primary">Enviando</p> : null}
+                {msg ? <p className="my-2 alert alert-primary">{msg}</p> : null}
 
             </section>
 
         </main>
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     </body>
         </main>
     )
