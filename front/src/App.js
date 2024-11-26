@@ -6,7 +6,6 @@ import HomePage from './pages/HomePage'
 import ContactoPage from './pages/ContactoPage'
 import NoticiasPage from './pages/NoticiasPage'
 import PlanesPage from './pages/PlanesPage'
-import BlogPage from './pages/BlogPage'
 
 import Links from './components/layout/Links'
 
@@ -28,7 +27,6 @@ const App = () => {
           <Route path='/planes' element={<PlanesPage />} />
           <Route path='/noticias' element={<NoticiasPage />} />
           <Route path='/contacto' element={<ContactoPage />} />
-          <Route path='/blog' element={<BlogPage />} />
         </Routes>
       </BrowserRouter>
 

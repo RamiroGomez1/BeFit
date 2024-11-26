@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom"
 import logo from '../img/logo.png';
 
 
-const NovedadesPage = (props) => {
+const PlanesPage = (props) => {
     return(
         <>
         <body
@@ -63,9 +63,6 @@ const NovedadesPage = (props) => {
                             </li>
                             <li className="nav-item mt-2 mx-3">
                                 <NavLink className="nav-link" to='/noticias'>Noticias</NavLink>
-                            </li>
-                            <li className="nav-item mt-2 mx-3">
-                                <NavLink className="nav-link" to='/blog'>Blogs</NavLink>
                             </li>
                         </ul>
                         <div className="mt-3 me-5">
@@ -162,4 +159,4 @@ const NovedadesPage = (props) => {
     )
 }
 
-export default NovedadesPage
+export default PlanesPage

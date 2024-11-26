@@ -67,9 +67,6 @@ const NoticiasPage = (props) => {
                             <li className="nav-item mt-2 mx-3">
                                 <NavLink className="nav-link" to='/noticias'>Noticias</NavLink>
                             </li>
-                            <li className="nav-item mt-2 mx-3">
-                                <NavLink className="nav-link" to='/blog'>Blogs</NavLink>
-                            </li>
                         </ul>
                         <div className="mt-3 me-5">
                             <NavLink style={{ backgroundColor: 'rgb(173, 3, 3)' }}
