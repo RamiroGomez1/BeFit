@@ -1,0 +1,31 @@
+.custom-card {
+    background-color: black;
+}
+
+.card-img-top {
+    width: 100%; 
+    height: auto; 
+}
+
+.card-body {
+    padding: 1.25rem;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold; 
+}
+
+.card-text {
+    font-size: 1rem; 
+    line-height: 1.5;
+}
+
+.card-link {
+    color: #ffffff; 
+    text-decoration: none;
+}
+
+.card-link:hover {
+    text-decoration: underline;
+}

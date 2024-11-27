@@ -62,7 +62,7 @@ const PlanesPage = (props) => {
                                     to='/contacto'>Contacto</NavLink>
                             </li>
                             <li className="nav-item mt-2 mx-3">
-                                <NavLink className="nav-link" to='/noticias'>Noticias</NavLink>
+                            <NavLink className="nav-link" to='/Novedades'>Novedades</NavLink>
                             </li>
                         </ul>
                         <div className="mt-3 me-5">
