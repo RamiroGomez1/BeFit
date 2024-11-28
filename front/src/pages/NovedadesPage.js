@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import NovedadItem from '../components/novedades/novedad';
-import { NavLink } from "react-router-dom"
 import Nav from '../components/layout/Nav';
 
 import '../styles/componentes/pages/NovedadesPage.css'
@@ -13,45 +12,49 @@ const NovedadesPage = (props) => {
 
     useEffect(() => {
         const cargarNovedades = async () => {
-            try {   
+            try {
                 setLoading(true);
                 const response = await axios.get('http://localhost:3000/api/novedades');
-
-                const novedadesData = response.data.map((novedad) => ({
-                    ...novedad, 
-                    imagen_url: novedad.imagen.match(/src="([^"]*)"/)?.[1] || '',
-                }));
                 
-
+                const novedadesData = response.data.map((novedad) => {
+                    const imagen_url = novedad.imagen.match(/src=['"]([^'"]*)['"]/)?.[1] || '';
+                    console.log('Extracted Image URL:', imagen_url);
+                    return {
+                        ...novedad,
+                        imagen_url
+                    };
+                });
+        
                 setNovedades(novedadesData);
                 setLoading(false);
             } catch (error) {
                 console.error("Error buscando novedades:", error);
                 setNovedades([]);
-                setLoading(false)
-            } 
+                setLoading(false);
+            }
         };
+        
 
         cargarNovedades();
     }, []);
 
     return (
         <body
-            className="overflow-hidden text-white d-flex justify-content-center align-items-center">
+            className=" text-white d-flex justify-content-center">
 
             <Nav />
 
-            <main>
-                <div className="text-center noticias mb-5">
+            <main className='noticias'>
+                <div className="text-center mb-5">
                     <h2>
                         Noticias
                     </h2>
                     <p>Aqui se veran las noticias mas relevantes sobre el mundo
-                        fitness. Desde nuevos papers o investigaciones hasta
+                        fitness. Desde nuevos papers e investigaciones hasta
                         influencers emergentes.</p>
                 </div>
 
-                <div className="row row-cols-1 row-cols-md-3 g-4">
+                <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mx-5">
                     {loading ? (
                         <p>Cargando...</p>
                     ) : novedades.length > 0 ? (
@@ -65,7 +68,7 @@ const NovedadesPage = (props) => {
                             />
                         ))
                     ) : (
-                        <p>No hay novedades disponibles.</p>
+                        <p className='mt-5'>No hay novedades disponibles.</p>
                     )}
                 </div>
             </main>

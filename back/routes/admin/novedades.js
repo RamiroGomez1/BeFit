@@ -143,15 +143,22 @@ router.post('/editar', async (req, res, next) => {
           img_id
         }
 
+        console.log(req.body);
+
+
         await novedadesModel.editarNovedadById(obj, id);
         res.redirect('/admin/novedades');
+
+
       } catch (error) {
+
         console.log(error)
         res.render('admin/editar', {
           layout: 'admin/layout',
           error: true,
           message:'No se pudo editar la novedad'
         })
+        
       }
 })
 

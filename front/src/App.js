@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage'
 import ContactoPage from './pages/ContactoPage'
 import NovedadesPage from './pages/NovedadesPage'
 import PlanesPage from './pages/PlanesPage'
+import SignPage from './pages/SignPage'
 
 import Links from './components/layout/Links'
 
@@ -17,18 +18,19 @@ const App = () => {
 
   return (
 
-    <div>
+    <>
       <BrowserRouter>
-      <Links />
+        <Links />
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/planes' element={<PlanesPage />} />
           <Route path='/novedades' element={<NovedadesPage />} />
           <Route path='/contacto' element={<ContactoPage />} />
+          <Route path='/signup' element={<SignPage />} />
         </Routes>
       </BrowserRouter>
 
-    </div>
+    </>
 
   );
 }

@@ -1,5 +1,6 @@
 .custom-card {
     background-color: black;
+    width: 10vw;
 }
 
 .card-img-top {
@@ -28,4 +29,9 @@
 
 .card-link:hover {
     text-decoration: underline;
+}
+
+
+.noticias {
+    margin-top: 100px;
 }
