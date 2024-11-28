@@ -44,7 +44,7 @@ router.get('/agregar', (req, res, next) => {
   })
 })
 
-router.post('/agregar' //cuando el boton para agregar sea presionado, que se ejecute esta funcion
+router.post('/agregar' 
   , async (req, res, next) => {
   try {
     var img_id = 'id';
@@ -53,13 +53,13 @@ router.post('/agregar' //cuando el boton para agregar sea presionado, que se eje
       img_id = (await uploader(imagen.tempFilePath)).public_id;
     }
 
-    if(req.body.titulo != '' && req.body.subtitulo != '' && req.body.cuerpo != '') // Si todos los campos de la nueva novedad estan completos, haz lo siguiente
+    if(req.body.titulo != '' && req.body.subtitulo != '' && req.body.cuerpo != '') 
      {
       await novedadesModel.insertNovedad({
         ...req.body,
         img_id
-      });// mete la info de la novedad nueva en insertNovedad como objeto
-      res.redirect('/admin/novedades') //mandame a la pagina de novedades ya con mi novedad nueva puesta
+      });
+      res.redirect('/admin/novedades') 
     } else {
       res.render('admin/agregar', {
         layout: 'admin/layout',
